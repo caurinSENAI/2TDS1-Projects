@@ -17,13 +17,13 @@ class Product {
         this.category = category;
     }
 }
-
 class CategoryServices {
     constructor() {
         this.categories = [];
         this.nextCategoryID = 1;
     }
-
+    
+    //CRUD => Create
     addCategory(name) {
         const id = this.nextCategoryID;
         this.nextCategoryID++;
@@ -31,7 +31,12 @@ class CategoryServices {
         const category = new Category(id, name);
         this.categories.push(category);
     }
+
+    getCategoryById(id) {
+        return this.categories.find((category) => category.id === id)
+    }
 }
+
 
 class ProductService {
     constructor() {
@@ -44,6 +49,7 @@ class ProductService {
         this.nextProductId++;
 
         const product = new Product(id, name, price, category);
+
         this.products.push(product);
         category.products.push(product);
     }
@@ -53,10 +59,10 @@ const categoriesList = new CategoryServices();
 const productsList = new ProductService();
 
 function createCategory() {
-    const categoryName = "Candies";
+    const categoryName1 = "Candies";
 
-    categoriesList.addCategory(categoryName);
-
+    categoriesList.addCategory(categoryName1);
+    
     console.log(categoriesList.categories);
 }
 
