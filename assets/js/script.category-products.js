@@ -32,8 +32,17 @@ class CategoryServices {
         this.categories.push(category);
     }
 
+    //R => Read
+
     getCategoryById(id) {
         return this.categories.find((category) => category.id == id)
+    }
+
+    // U => Update
+
+    updateCategory(id, name) {
+        const category = this.getCategoryById(id);
+        category.name = name;
     }
 }
 
