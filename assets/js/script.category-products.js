@@ -141,3 +141,4 @@ function findProduct(id) {
 
     console.log(product)
 }
+
