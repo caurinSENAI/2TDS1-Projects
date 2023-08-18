@@ -84,18 +84,33 @@ const productsList = new ProductService();
 
 function createCategory() {
     const categoryName1 = "Candies";
-
+    const categoryName2 = "Shoes";
+    const categoryName3 = "Books";
+    
     categoriesList.addCategory(categoryName1);
+    categoriesList.addCategory(categoryName2);
+    categoriesList.addCategory(categoryName3);
     
     console.log(categoriesList.categories);
 }
 
 function createProduct() {
-    const productName = "Choco";
-    const productsPrices = 0.50;
-    const productCategory = categoriesList.categories[0];
+    const productName1 = "Choco";
+    const productsPrices1 = 0.50;
+    const productCategory1 = categoriesList.categories[0];
+    
+    const productName2 = "Sneakers";
+    const productsPrices2 = 100;
+    const productCategory2 = categoriesList.categories[1];
 
-    productsList.addProduct(productName, productsPrices, productCategory)
+    const productName3 = "Harry Potter";
+    const productsPrices3 = 50;
+    const productCategory3 = categoriesList.categories[2];
+    
+
+    productsList.addProduct(productName1, productsPrices1, productCategory1)
+    productsList.addProduct(productName2, productsPrices2, productCategory2)
+    productsList.addProduct(productName3, productsPrices3, productCategory3)
 
     console.log(productsList.products);
 }
@@ -116,4 +131,13 @@ function deleteCategory(id) {
     categoriesList.deleteCategory(id);
 
     console.log(categoriesList.categories);
+}
+
+
+
+
+function findProduct(id) {
+    const product = productsList.getProductById(id);
+
+    console.log(product)
 }
