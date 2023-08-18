@@ -33,7 +33,7 @@ class CategoryServices {
     }
 
     getCategoryById(id) {
-        return this.categories.find((category) => category.id === id)
+        return this.categories.find((category) => category.id == id)
     }
 }
 
@@ -74,4 +74,10 @@ function createProduct() {
     productsList.addProduct(productName, productsPrices, productCategory)
 
     console.log(productsList.products);
+}
+
+function findCategory(id) {
+    const category = categoriesList.getCategoryById(id);
+
+    console.log(category)
 }
