@@ -45,6 +45,8 @@ class CategoryServices {
         category.name = name;
     }
 
+//D => Delete
+
     deleteCategory(id) {
         const category = this.getCategoryById(id);
         const index = this.categories.indexOf(category);
@@ -100,6 +102,12 @@ function findCategory(id) {
 
 function editCategory(id, name) {
     categoriesList.updateCategory(id, name);
+
+    console.log(categoriesList.categories);
+}
+
+function deleteCategory(id) {
+    categoriesList.deleteCategory(id);
 
     console.log(categoriesList.categories);
 }
